@@ -6,9 +6,9 @@ import (
 	"errors"
 	"fmt"
 	"github.com/go-resty/resty/v2"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/config"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/entity"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/http"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/config"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/entity"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/http"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
 	"gopkg.in/yaml.v3"
@@ -67,10 +67,10 @@ func (l *App) Userlogin() *entity.LoginUrl {
 	go l.work(l.loginCtx)
 	l.channelisrun = true
 	return l.loginurl
-	//if err = utiles.GenerateQr(loginUrl.Data.Url); err != nil {
+	// if err = utiles.GenerateQr(loginUrl.Data.Url); err != nil {
 	//	logx.Error(err)
 	//	return err
-	//}
+	// }
 }
 func (l *App) Getlogin() int {
 	if l.loginstatus == 1 {
@@ -100,7 +100,7 @@ func (l *App) work(ctx context.Context) {
 	for nologin {
 		select {
 		case <-ctx.Done():
-			//l.channelisrun = false
+			// l.channelisrun = false
 			logx.Info("登录线程退出")
 			nologin = false
 		case <-t.C:
@@ -137,14 +137,14 @@ func (l *App) work(ctx context.Context) {
 						CookieList[kv[0]] = kv[1]
 						CookieStr += pair[0] + ";"
 					}
-					//使用追加模式打开文件
+					// 使用追加模式打开文件
 					file, err = os.OpenFile("token/bili_token.txt", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0666)
 					if err != nil {
 						logx.Errorf("打开文件错误：", err)
 					}
 					file.WriteString(CookieStr)
 					file.Close()
-					//使用追加模式打开文件
+					// 使用追加模式打开文件
 					file, err = os.OpenFile("token/bili_token.json", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0666)
 					if err != nil {
 						logx.Errorf("打开文件错误：", err)
@@ -156,7 +156,7 @@ func (l *App) work(ctx context.Context) {
 					l.loginstatus = 1
 					l.Stopwork()
 				}
-				//l.Stopwork()
+				// l.Stopwork()
 			}
 			t.Reset(w)
 		}

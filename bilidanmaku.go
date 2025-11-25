@@ -4,15 +4,15 @@ import (
 	"embed"
 	"flag"
 	"fmt"
+	"io"
+	"os"
+
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 	"github.com/zeromicro/go-zero/core/logx"
-	"io"
-	"os"
 )
 
-//go:embed all:frontend/dist
 var assets embed.FS
 
 //go:embed etc/bilidanmaku-api.yaml
@@ -82,7 +82,7 @@ func main() {
 	logx.Info("当前版本:", Version)
 	app := NewApp(Version)
 	program := NewProgram()
-	//test := NewTest()
+	// test := NewTest()
 	// Create application with options
 	err := wails.Run(&options.App{
 		Title:  "弹幕机器人",
@@ -91,12 +91,12 @@ func main() {
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
-		//BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
+		// BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
 		OnStartup: app.startup,
-		//OnBeforeClose: app.Onstop,
+		// OnBeforeClose: app.Onstop,
 		Bind: []interface{}{
 			app,
-			//test,
+			// test,
 			program,
 		},
 	})

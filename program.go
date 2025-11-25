@@ -3,12 +3,12 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/config"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/entity"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/handler"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/http"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/svc"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/utiles"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/config"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/entity"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/handler"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/http"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/svc"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/utiles"
 	"github.com/zeromicro/go-zero/core/logx"
 	"os"
 	"sync"
@@ -59,16 +59,16 @@ func (p *Program) Start() bool {
 }
 
 func (p *Program) Stop() bool {
-	//p.locked.Lock()
-	//if p.workCancel != nil {
+	// p.locked.Lock()
+	// if p.workCancel != nil {
 	//	p.workCancel()
-	//}
-	//for p.running {
+	// }
+	// for p.running {
 	//	time.Sleep(1 * time.Second)
 	//	logx.Info("等待机器关闭中.....")
-	//}
+	// }
 	logx.Info("手动停止已经不让用了 别请求了")
-	//p.locked.Unlock()
+	// p.locked.Unlock()
 	return false
 }
 func (p *Program) Restart() bool {
@@ -82,10 +82,10 @@ func (p *Program) Restart() bool {
 		logx.Info("重载配置已完成")
 	}
 	p.mutex.Unlock()
-	//if err != nil {
+	// if err != nil {
 	//	logx.Error(err)
 	//	return false
-	//}
+	// }
 	return true
 }
 func (p *Program) Monitor() bool {
@@ -100,8 +100,8 @@ func (l *Program) Bili_danmaku_Start(workctx context.Context) {
 	http.InitHttpClient()
 
 	// 准备select中用到的变量
-	//sig := make(chan os.Signal)
-	//signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
+	// sig := make(chan os.Signal)
+	// signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
 	var interval = 10 * time.Second
 	t := time.NewTimer(interval)
 	defer t.Stop()
@@ -148,7 +148,7 @@ func (l *Program) Bili_danmaku_Start(workctx context.Context) {
 				preStatus = entity.NotStarted
 				l.cls.SayGoodbye()
 				l.cls.StopWsClient()
-				//l.danmustop()
+				// l.danmustop()
 			}
 			t.Reset(interval)
 		}
