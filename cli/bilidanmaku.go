@@ -4,13 +4,13 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/config"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/entity"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/handler"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/http"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/logic"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/svc"
-	"github.com/xbclub/BilibiliDanmuRobot-Core/utiles"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/config"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/entity"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/handler"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/http"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/logic"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/svc"
+	"github.com/pengfeiXV/BilibiliDanmuRobot-Core/utiles"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
 	"os"
@@ -41,7 +41,7 @@ func main() {
 			panic(fmt.Sprintf("无法创建token文件夹 请手动创建:%s", err))
 		}
 	}
-	//配置数据库文件夹
+	// 配置数据库文件夹
 	dbdir, err := os.Stat(c.DBPath)
 	if os.IsNotExist(err) || !dbdir.IsDir() {
 		err = os.MkdirAll(c.DBPath, 0777)
@@ -106,7 +106,7 @@ func main() {
 			}
 			if info.Data.LiveStatus == entity.Live && preStatus == entity.NotStarted { // 由NotStarted到Live是开播
 				logx.Infof("开播啦！%v", ctx.Config.RoomId)
-				//preStatus = entity.Live
+				// preStatus = entity.Live
 
 				if cls == nil {
 					t.Reset(interval)
