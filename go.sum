@@ -124,6 +124,8 @@ github.com/pengfeiXV/BilibiliDanmuRobot-Core v1.2.2 h1:3BZg0pGLTbBxfYE0XdaAfMokL
 github.com/pengfeiXV/BilibiliDanmuRobot-Core v1.2.2/go.mod h1:COJYTnJU3UqINWuQtex4QCzzZLTZjnv7iifAQ8z2OeM=
 github.com/pengfeiXV/BilibiliDanmuRobot-Core v1.2.3 h1:mWkNoazi9EaoFb66c86ZC7b7rKHWwpf5JlUrZ7gyKGI=
 github.com/pengfeiXV/BilibiliDanmuRobot-Core v1.2.3/go.mod h1:COJYTnJU3UqINWuQtex4QCzzZLTZjnv7iifAQ8z2OeM=
+github.com/pengfeiXV/BilibiliDanmuRobot-Core v1.2.4 h1:2Vv4ji1EGcIrbLYWW2U9chBQwZEIivdqzEbmMGnl1jE=
+github.com/pengfeiXV/BilibiliDanmuRobot-Core v1.2.4/go.mod h1:COJYTnJU3UqINWuQtex4QCzzZLTZjnv7iifAQ8z2OeM=
 github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c h1:+mdjkGKdHQG3305AYmdv1U2eRNDiU2ErMBj1gwrq8eQ=
 github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c/go.mod h1:7rwL4CYBLnjLxUqIJNnCWiEdr3bn6IUYi15bNlnbCCU=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
